@@ -1,8 +1,29 @@
 <template name="reservasDia">
   {{> top}}
-<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+                <h3 class="text-center">Reservas del dia de la fecha</h3>
+                <br>
+                En esta seccion usted tiene disponible para impresion las reservas del dia de hoy.
+                <br><br>
 
 
-  reservas del dia
+
+          <br><br>
+          {{> cancha numero="1"}}
+          {{> cancha numero="2"}}
+          <br>
+
+      <button type="button"  aria-haspopup="true" >
+        Imprimir   <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+      </button>
+      <br><br>
+  </div>
+</div>
+
+</div>
+
 
 </template>

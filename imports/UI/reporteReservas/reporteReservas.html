@@ -1,39 +1,46 @@
 <template name="reporteReservas">
 {{> top}}
-Reporte de Reservas
-<br>
-En esta seccion usted tiene disponible el reporte de las reservas mensuales, para efectuar la facturacion correspondiente.
-<br>
-Ingrese el costo del modulo de 45 minutos de alquiler:
-<br>
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control" aria-label="Precio alquiler 45 minutos">
-  </div>
 
-Seleccione el periodo para el calculo:
-<!-- Single button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Periodo <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-  {{#each periodosReporteReservas}}
-    <li>{{label}} - ({{mes}}/{{ano}})</li>
-  {{/each}}
-  </ul>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+                <h3 class="text-center">Reporte de Reservas</h3>
+                <br>
+                En esta seccion usted tiene disponible el reporte de las reservas mensuales, para efectuar la facturacion correspondiente.
+                <br><br>
+                Ingrese el costo del modulo de 45 minutos de alquiler:
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="text" class="form-control" aria-label="Precio alquiler 45 minutos">
+                </div>
 
-<div class="row">
-    <div class="col-md-4">
+              Seleccione el periodo para el calculo:
+              <!-- Single button -->
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Periodo <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                {{#each periodosReporteReservas}}
+                  <li>{{label}}</li>
+                {{/each}}
+                </ul>
+              </div>
+
+          <br><br>
         <ul class="list-group">
           {{#each reporteReservasDetalle}}
-          <li class="list-group-item">{{turnoHorario}} - {{turnoSocio}} - {{cancha}} -
+          <li class="list-group-item">{{turnoHorario}} - {{turnoSocio}} - Cancha: {{cancha}}
           </li>
           {{/each}}
       </ul>
-    </div>
+      <button type="button"  aria-haspopup="true" >
+        Exportar   <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+      </button>
 
+    </div>
+    </div>
 </div>
 
 </template>
