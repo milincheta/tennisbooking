@@ -1,0 +1,89 @@
+<template name="turnos">
+  {{> top}}
+
+  <div class="container-fluid">
+  <div class="container">
+  <h2 class="text-center"> Reserva de Turnos</h2>
+  <br>
+  {{> calendar}}
+  <br>
+
+  {{> cancha numero="1"}}
+  {{> cancha numero="2"}}
+  {{> reservaModal}}
+  </div>
+  </div>
+
+</template>
+
+<template name="cancha">
+<div class="container-fluid">
+  <div class="container">
+
+  <button class="btn btn-primary" type="button">Cancha <span class="badge">{{numero}}</span></button>
+
+    <div class="row">
+ <!--
+        <div class="col-md-4"> Anterior
+            <ul class="list-group">
+              {{#each ListaTurnosAnterior}}
+              <li class="list-group-item">{{> turnoIndividual}}
+              <button type="button" class="btn btn-default btn-xs" id="turnoPedir">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+              </button>
+              </li>
+              {{/each}}
+          </ul>
+        </div>
+-->
+        <div class="col-md-4"> <strong> 20 de Agosto 2016 </strong>
+          <ul class="list-group">
+            {{#each ListaTurnosSeleccionado}}
+            <li class="list-group-item ">{{> turnoIndividual}}
+            <button type="button" class="btn btn-default btn-xs pull-right" id="turnoPedir">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            </button>
+            </li>
+            {{/each}}
+        </ul>
+<!--
+        </div>
+        <div class="col-md-4"> Siguiente
+          <ul class="list-group">
+            {{#each ListaTurnosSeleccionado}}
+            <li class="list-group-item">{{> turnoIndividual}}
+            <button type="button" class="btn btn-default btn-xs" id="turnoPedir">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            </button>
+            </li>
+            {{/each}}
+          </ul>
+-->
+        </div>
+    </div>
+  </div>
+</div>
+</template>
+
+<template name="reservaModal">
+  <div class="modal fade" id="reservaModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+
+          <div class="modal-body">
+          <label for="name">Agregar Jugadores</label>
+          <input type="text" id="nombreJugador" />
+          {{#each listadoUsuarios}}
+          {{_id}}
+          {{/each}}
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="save">Confirmar reserva</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,75 @@
+<template name="detalleTurnos">
+  {{> top}}
+
+
+{{> confirmaCancelaModal}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <h3 class="text-center">Sus Reservas Pendientes Para Este Mes</h3>
+            <ul class="list-group">
+              {{#each ListaTurnosPendientes}}
+              <li class="list-group-item">{{> turnoIndividual}}
+                <button type="button" class="btn btn-default btn-xs pull-right" id="turnoLiberar">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+              </li>
+
+              {{/each}}
+          </ul>
+        </div>
+
+
+        <div class="col-md-4">
+          <h3 class="text-center">Consumos durante el mes en curso</h3>
+            <ul class="list-group">
+                      {{#each ListaTurnosSaldo}}
+                      <li class="list-group-item">{{> turnoIndividual}}</li>
+                      {{/each}}
+                  </ul>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+<!--
+<h2>Historico de Reservas </h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+              {{#each ListaTurnosHistorico}}
+              <li class="list-group-item">{{> turnoIndividual}}</li>
+              {{/each}}
+          </ul>
+        </div>
+</div>
+</div>
+-->
+</template>
+
+
+
+<template name="confirmaCancelaModal">
+  <div class="modal fade" id="confirmaCancelaModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+
+          <div class="modal-body">
+          <label for="name">Está seguro de cancelar su reserva?</label>
+          </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="save">Si</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

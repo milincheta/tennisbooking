@@ -1,0 +1,42 @@
+<template name="top">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" id="inicio">Administrador de Turnos</a> </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a id="turnos"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Reserva Turnos</a></li>
+        <li><a id="detalleTurnos"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Detalle Turnos</a></li>
+
+        <li>
+          {{#if currentUser }}
+          <a id="logout"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Salir</a>
+          {{else}}
+          <a id="login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingreso Socios</a>
+          {{/if}}
+          </li>
+           <!-- Admin login -->
+{{#if currentUser}} <!-- CHECK IF IS ADMIN  -->
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Administración <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a id="reporteReservas">Reporte de reservas</a></li>
+            <li><a id="reservasDia">Reservas del día</a></li>
+            <li><a id="mensajes">Mensajes</a></li>
+            <li><a id="estadisticas">Estadisticas</a></li>
+          </ul>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+</template>

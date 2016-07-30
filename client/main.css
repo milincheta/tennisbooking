@@ -1,0 +1,19 @@
+/* CSS declarations go here */
+@charset "UTF-8";
+/* CSS Document */
+/* General */
+a{ cursor:pointer}
+/* Nav bar */
+.navbar-default { background-color: #ee6e73; border-color: #de656a; border-radius: 0px; }
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover { color: #fff; }
+.navbar-default .navbar-nav>li>a { color: #fff; }
+.navbar-default .navbar-nav>li>a:hover { background: #e2545a; color: #fff; }
+.navbar-default .navbar-toggle .icon-bar { background-color: #fff; }
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover { background-color: #e2545a; }
+.navbar-default .navbar-toggle { border-color: #fff; }
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover { color: #fff; background-color: #e2545a; }
+
+/* queries*/
+@media (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu>li>a { color: #fff; }
+}
