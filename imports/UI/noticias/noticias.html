@@ -1,0 +1,46 @@
+<template name="noticias">
+{{> top}}
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">Titulo</span>
+          <input type="text" class="form-control"  aria-describedby="basic-addon1"  id="titulo">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon" >Noticia</span>
+          <input type="text" class="form-control"  aria-describedby="basic-addon1" id="cuerpo">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <br>
+      <button type="button"  aria-haspopup="true" id="guardar" >
+        Guardar   <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+          <h3 class="text-center">Administración de noticias</h3>
+            <ul class="list-group">
+              {{#each listaNoticias}}
+              <li class="list-group-item">{{titulo}} - {{cuerpo}}
+                <button type="button" class="btn btn-default btn-xs pull-right" id="borrar">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+              </li>
+
+              {{/each}}
+          </ul>
+        </div>
+      </div>
+
+
+
+  </div>
+
+
+</template>

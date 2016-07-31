@@ -2,6 +2,8 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
+import '../imports/UI/noticias/noticias.html';
+import '../imports/UI/noticias/noticias.js';
 import '../imports/UI/top/top.html';
 import '../imports/UI/top/top.js';
 import '../imports/UI/login/login.html';
@@ -16,8 +18,6 @@ import '../imports/UI/reservasDia/reservasDia.html';
 import '../imports/UI/reservasDia/reservasDia.js';
 import '../imports/UI/reporteReservas/reporteReservas.html';
 import '../imports/UI/reporteReservas/reporteReservas.js';
-import '../imports/UI/mensajes/mensajes.html';
-import '../imports/UI/mensajes/mensajes.js';
 import '../imports/UI/estadisticas/estadisticas.html';
 import '../imports/UI/estadisticas/estadisticas.js';
 import '../imports/UI/calendar/calendar.html';
@@ -59,12 +59,19 @@ Router.route('/reservasDia', function () {
   this.render('reservasDia');
 });
 
-Router.route('/mensajes', function () {
-  this.render('mensajes');
+Router.route('/noticias', function () {
+  this.render('noticias');
 });
 
 Router.route('/estadisticas', function () {
   this.render('estadisticas');
+});
+
+Template.main.helpers({
+  listaNoticias() {
+    return Noticias.find();
+  },
+
 });
 //Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0

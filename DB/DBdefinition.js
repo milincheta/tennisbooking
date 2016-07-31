@@ -1,5 +1,6 @@
 Turnos = new Mongo.Collection( 'turnos' );
 Periodos = new Mongo.Collection( 'peridodos' );
+Noticias = new Mongo.Collection ('noticias');
 
 var Schemas = {};
 

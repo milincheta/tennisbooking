@@ -9,6 +9,18 @@
 <h3 class="text-center"> Ingrese con su usuario y contraseña para realizar una reserva.</h3>
 <br>
 
+<div class="panel panel-default">
+  <div class="panel-heading">Noticias</div>
+  <div class="panel-body">
+    {{#each listaNoticias}}
+    <li>
+      <strong>{{titulo}}</strong><br>
+      {{cuerpo}}
+    </li>
+    {{/each}}
+
+  </div>
+</div>
 
 </div>
 </div>

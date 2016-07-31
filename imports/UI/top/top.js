@@ -6,7 +6,6 @@ import './top.html';
 
 
 
-
 Template.top.events({
   'click #inicio': function () {
     Router.go('/');
@@ -38,8 +37,8 @@ Template.top.events({
     Router.go('/reservasDia');
   },
 
-  'click #mensajes': function () {
-    Router.go('/mensajes');
+  'click #noticias': function () {
+    Router.go('/noticias');
   },
 
   'click #estadisticas': function () {
