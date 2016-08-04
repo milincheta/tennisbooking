@@ -1,0 +1,17 @@
+<template name="gestionCalendario">
+  {{> top}}
+  gestion calendario
+
+  <div class="col-md-4"> <strong>todo</strong>
+    <ul class="list-group">
+      {{#each calendarioCompleto}}
+      <li class="list-group-item ">{{turnoSocio}} o
+      <button type="button" class="btn btn-default btn-xs pull-right" id="turnoPedir">
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+      </button>
+      </li>
+      {{/each}}
+  </ul>
+</div>
+
+</template>

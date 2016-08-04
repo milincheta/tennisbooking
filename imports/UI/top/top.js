@@ -44,5 +44,7 @@ Template.top.events({
   'click #estadisticas': function () {
     Router.go('/estadisticas');
   },
-
+  'click #gestionCalendario': function () {
+    Router.go('/gestionCalendario');
+  },
 });

@@ -23,7 +23,6 @@ Template.noticias.events({
     Noticias.insert({
       titulo,
       cuerpo,
-      createdAt: new Date(), // current time
     });
 
     //// Clear form

@@ -6,6 +6,7 @@ Template.cancha.helpers({
 
 Template.cancha.helpers({
   ListaTurnosSeleccionado() {
+
     return Turnos.find();
   },
 });

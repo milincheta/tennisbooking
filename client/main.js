@@ -22,6 +22,9 @@ import '../imports/UI/estadisticas/estadisticas.html';
 import '../imports/UI/estadisticas/estadisticas.js';
 import '../imports/UI/calendar/calendar.html';
 import '../imports/UI/calendar/calendar.js';
+import '../imports/UI/gestionCalendario/gestionCalendario.html';
+import '../imports/UI/gestionCalendario/gestionCalendario.js';
+
 
 import '../imports/startup/accounts-config.js';
 
@@ -65,6 +68,10 @@ Router.route('/noticias', function () {
 
 Router.route('/estadisticas', function () {
   this.render('estadisticas');
+});
+
+Router.route('/gestionCalendario', function () {
+  this.render('gestionCalendario');
 });
 
 Template.main.helpers({
